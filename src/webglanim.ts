@@ -24,7 +24,6 @@ export class WebGLLogoParticles {
   private vertexBuffer!: WebGLBuffer;
   private program!: WebGLProgram;
   private particleCount: number = 0;
-  private startTime: number = 0;
 
   // Vertex shader for positioning and sizing particles
   private vertexShaderSource = `#version 300 es
@@ -107,7 +106,6 @@ export class WebGLLogoParticles {
     // Load logo and start animation
     this.logoImage.onload = () => {
       this.createParticles();
-      this.startTime = performance.now();
       this.animate();
     };
   }
